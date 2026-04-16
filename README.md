@@ -12,7 +12,7 @@ Sistema jurídico para gerenciamento de processos, usuários e autenticação se
 ## 🛠️ Arquitetura
 - Backend: Java + Spring Boot
 - Frontend: React + TypeScript
-- Banco: (coloca o que você usa)
+- Banco: PostgreSQL
 
 ## 🔄 Em desenvolvimento
 - Cadastro de processos
