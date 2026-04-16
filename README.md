@@ -22,8 +22,10 @@ Sistema jurídico para gerenciamento de processos, usuários e autenticação se
 ## ▶️ Como rodar
 
 ### Backend
+cd backend
 ./mvnw spring-boot:run
 
 ### Frontend
+cd frontend
 npm install
 npm run dev
