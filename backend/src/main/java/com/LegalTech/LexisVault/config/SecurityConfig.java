@@ -31,18 +31,18 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
         return http
-            // ✅ CORS
+            // CORS
             .cors(cors -> cors.configurationSource(corsConfigurationSource))
 
-            // ✅ CSRF OFF (API REST)
+            // CSRF OFF (API REST)
             .csrf(csrf -> csrf.disable())
 
-            // ✅ API STATELESS
+            // API STATELESS
             .sessionManagement(session ->
                 session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
             )
 
-            // ✅ ROTAS
+            // ROTAS
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                 .requestMatchers(HttpMethod.POST, "/auth/login").permitAll()
@@ -50,10 +50,10 @@ public class SecurityConfig {
                 .anyRequest().authenticated()
             )
 
-            // ✅ JWT FILTER (ESSENCIAL)
+            // JWT FILTER (ESSENCIAL)
             .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)
 
-            // ❌ Desativa login padrão
+            // Desativa login padrão
             .formLogin(form -> form.disable())
             .httpBasic(basic -> basic.disable())
 
