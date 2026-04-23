@@ -50,7 +50,7 @@ public class SecurityConfig {
                 .anyRequest().authenticated()
             )
 
-            // JWT FILTER (ESSENCIAL)
+            // JWT FILTER
             .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)
 
             // Desativa login padrão
