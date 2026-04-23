@@ -34,7 +34,7 @@ public class SecurityConfig {
             // CORS
             .cors(cors -> cors.configurationSource(corsConfigurationSource))
 
-            // CSRF OFF (API REST)
+            // CSRF OFF
             .csrf(csrf -> csrf.disable())
 
             // API STATELESS
